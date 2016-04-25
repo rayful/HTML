@@ -1,0 +1,12 @@
+{
+    "name": "rayful/html",
+    "description": "A HTML php echo class, including output option, radio, checkbox, select, ul, span, label, a, and so on. Can be extended to any HTML elements.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "kingmax",
+            "email": "kingmaxyang@gmail.com"
+        }
+    ],
+    "require": {}
+}
