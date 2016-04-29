@@ -1,7 +1,7 @@
 # HTML
 一个后台使用的直接把HTML的元素输出封装好的类。
 
-### 用法
+### 基本用法
 模板文件里面： 
 ```
 <select name="status" class="form-control">
@@ -20,6 +20,8 @@
 
 同时option可以自动选中。
 
+### 进阶用法
+
 可以直接使用一个对象来输出（结合rayful/dataset类）
 ```php
 echo \rayful\Tool\HTML\option::loop(Order::$statuses, $_REQUEST['status']);
@@ -29,5 +31,12 @@ echo \rayful\Tool\HTML\option::loop(new Users(), $_REQUEST['status']);
 其它用法类似，还有：
 ```php
 \rayful\Tool\HTML\checkbox::loopDisplay("status", Order::$statuses, $_REQUEST['status']);
+\rayful\Tool\HTML\radio::loopDisplay("status", Order::$statuses, $_REQUEST['status']);
 
+
+\rayful\Tool\HTML\select::displaySortField(['name'=>'姓名','date'=>'日期'], $_REQUEST['sort']['field']);
+\rayful\Tool\HTML\select::displaySortType($_REQUEST['sort']['type']);
+
+echo \rayful\Tool\HTML\select::generator("status", Order::$statuses, $_REQUEST['status']);
 ```
+请注意，方法名里面有display字眼的将直接输出。其它的需要打印才能输出，比如：loop、generator等字眼都需要另外打印的。
