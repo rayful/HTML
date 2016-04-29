@@ -1,9 +1,12 @@
 # HTML
 一个后台使用的直接把HTML的元素输出封装好的类。
 
+### 安装
+composer require rayful/html
+
 ### 基本用法
 模板文件里面： 
-```
+```html+php
 <select name="status" class="form-control">
 <?php echo \rayful\Tool\HTML\option::loop([''=>'全部','-1'=>'取消','0'=>'未完成','1'=>'成功'], $_REQUEST['status'])?>
 </select>
