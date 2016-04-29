@@ -37,7 +37,7 @@ class checkbox extends input
         }
     }
 
-    public static function loop_display($name, $data, $checked_values)
+    public static function loopDisplay($name, $data, $checked_values)
     {
         foreach (self::generator($name, $data, $checked_values) as $content) {
             echo $content;
