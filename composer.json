@@ -10,5 +10,10 @@
     ],
     "require": {
         "rayful/toolkit": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "rayful\\Tool\\": "src/"
+        }
     }
 }
