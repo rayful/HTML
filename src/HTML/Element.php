@@ -1,6 +1,8 @@
 <?php
 
 namespace rayful\Tool\HTML;
+use rayful\Tool\objectTool;
+
 /**
  * Created by PhpStorm.
  * User: kingmax
@@ -9,7 +11,8 @@ namespace rayful\Tool\HTML;
  */
 abstract class Element
 {
-    use \Utility\access;
+    use objectTool;
+    public $class;
 
     function __construct($data = [])
     {
@@ -29,7 +32,7 @@ abstract class Element
      */
     public function attributes()
     {
-        foreach ($this->publics() as $key => $value) {
+        foreach ($this->toArray() as $key => $value) {
             if (!is_null($value)) {
                 yield $key => $value;
             }

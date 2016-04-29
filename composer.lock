@@ -1,0 +1,52 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d9dd949c791a438c55b49da261773b4f",
+    "content-hash": "de41da366895b27118ac775d97e7f215",
+    "packages": [
+        {
+            "name": "rayful/toolkit",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rayful/toolkit.git",
+                "reference": "407a9b5792eaee35a831836ab382aa855439f7ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rayful/toolkit/zipball/407a9b5792eaee35a831836ab382aa855439f7ef",
+                "reference": "407a9b5792eaee35a831836ab382aa855439f7ef",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "rayful\\Tool\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kingmax",
+                    "email": "kingmaxyang@gmail.com"
+                }
+            ],
+            "description": "A toolkit service for rayful PHP packages.",
+            "time": "2016-04-26 07:35:26"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
