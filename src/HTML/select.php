@@ -35,7 +35,8 @@ class select extends ElementContent
         $select = new select();
         $select->name = $name;
         $select->_content = $is_blank_first ? option::blank() : "";
-        $select->_content .= option::loop($options, $selected ?: $_REQUEST[$name]);
+        $defaultSelected = isset($_REQUEST[$name]) ? $_REQUEST[$name] : '';
+        $select->_content .= option::loop($options, $selected ?: $defaultSelected);
         return $select;
     }
 
