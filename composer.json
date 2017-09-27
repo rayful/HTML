@@ -9,11 +9,11 @@
         }
     ],
     "require": {
-        "rayful/toolkit": "^1.1"
+        "rayful/object-tool": "^1.0"
     },
     "autoload": {
         "psr-4": {
-            "rayful\\Tool\\": "src/"
+            "rayful\\HTML\\": "src/"
         }
     }
 }

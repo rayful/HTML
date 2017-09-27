@@ -4,11 +4,19 @@
 ### 安装
 composer require rayful/html
 
+### 命名规则
+为了让代码在HTML文件里看得更舒服，因此关于输出HTML的类比如：select、option、a等全部用小写。
+
+### 文件分布及用类区别
+* Element目录：只生成某些元素，不设定任何参数。
+* Generator目录：可通过构造函数里面传参，直接构造出特定的元素。（为方便，Generator里面构造出来的元素，name和id都会同时设定并且一样）
+* View目录：和样式有关，将在Generator的基础上再加上样式。
+
 ### 基本用法
 模板文件里面： 
 ```html+php
 <select name="status" class="form-control">
-<?php echo \rayful\Tool\HTML\option::loop([''=>'全部','-1'=>'取消','0'=>'未完成','1'=>'成功'], $_REQUEST['status'])?>
+<?php new \rayful\HTML\Generator\Options([''=>'全部','-1'=>'取消','0'=>'未完成','1'=>'成功'], $_REQUEST['status'])?>
 </select>
 ```
 将输出：
@@ -25,21 +33,11 @@ composer require rayful/html
 
 ### 进阶用法
 
-可以直接使用一个对象来输出（结合rayful/dataset类）
-```php
-echo \rayful\Tool\HTML\option::loop(Order::$statuses, $_REQUEST['status']);
-echo \rayful\Tool\HTML\option::loop(new Users(), $_REQUEST['status']);
-```
+请见test/example.php的用法。
+#### 效果请见：
+- test/bootstrap3.php
+- test/bootstrap4.php
 
-其它用法类似，还有：
-```php
-\rayful\Tool\HTML\checkbox::loopDisplay("status", Order::$statuses, $_REQUEST['status']);
-\rayful\Tool\HTML\radio::loopDisplay("status", Order::$statuses, $_REQUEST['status']);
-
-
-\rayful\Tool\HTML\select::displaySortField(['name'=>'姓名','date'=>'日期'], $_REQUEST['sort']['field']);
-\rayful\Tool\HTML\select::displaySortType($_REQUEST['sort']['type']);
-
-echo \rayful\Tool\HTML\select::generator("status", Order::$statuses, $_REQUEST['status']);
-```
-请注意，方法名里面有display字眼的将直接输出。其它的需要打印才能输出，比如：loop、generator等字眼都需要另外打印的。
+#### Editor.php的使用：
+- test/bootstrap3-editor.php
+- test/bootstrap4-editor.php
