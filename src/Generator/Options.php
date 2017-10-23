@@ -40,12 +40,12 @@ class Options implements \IteratorAggregate
             $option->value = $key;
 
             if (!is_null($this->selected)){
-                if(is_string($this->selected)){
-                    if(strval($option->value) === strval($this->selected)) {
+                if(is_array($this->selected)){
+                    if(in_array(strval($option->value), $this->selected)){
                         $option->selected = "selected";
                     }
-                }elseif(is_array($this->selected)){
-                    if(in_array(strval($option->value), $this->selected)){
+                }else{
+                    if(strval($option->value) === strval($this->selected)) {
                         $option->selected = "selected";
                     }
                 }
